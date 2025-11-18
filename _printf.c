@@ -21,7 +21,10 @@ if (format[i] == '%' && format[i + 1])
 {
 i++;
 if (format[i] == 'c')
-write(1, &(char){va_arg(args, int)}, 1), count++;
+{
+char c = va_arg(args, int);
+write(1, &c, 1), count++;
+}
 else if (format[i] == 's')
 {
 str = va_arg(args, char *);
