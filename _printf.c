@@ -17,8 +17,10 @@ return (-1);
 va_start(args, format);
 while (format[i])
 {
-if (format[i] == '%' && format[i + 1])
+if (format[i] == '%')
 {
+if (!format[i + 1])
+return (-1);
 i++;
 if (format[i] == 'c')
 {
